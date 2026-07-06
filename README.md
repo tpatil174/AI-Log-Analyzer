@@ -222,3 +222,264 @@ The generated report contains:
 Unlike keyword matching, the AI understands the overall meaning of the logs and provides contextual insights.
 
 ---
+
+# ☁️ AWS Services Used
+
+| AWS Service | Purpose |
+|-------------|---------|
+| **Amazon S3** | Stores uploaded log files and triggers Lambda events |
+| **AWS Lambda** | Processes uploaded logs and invokes OpenAI API |
+| **Amazon SNS** | Sends AI-generated log analysis reports via email |
+| **Amazon CloudWatch** | Monitors Lambda execution and stores logs |
+| **AWS Secrets Manager** | Securely stores the OpenAI API Key |
+| **AWS IAM** | Provides secure permissions between AWS services |
+
+---
+
+# 💻 Technologies Used
+
+| Technology | Usage |
+|------------|------|
+| Python 3.12 | Backend programming language |
+| boto3 | AWS SDK for Python |
+| OpenAI API | AI-powered log analysis |
+| AWS Lambda | Serverless compute |
+| Amazon S3 | Object storage |
+| Amazon SNS | Email notifications |
+| Amazon CloudWatch | Monitoring and logging |
+| AWS IAM | Identity & Access Management |
+| AWS Secrets Manager | Secret management |
+| Git & GitHub | Version control |
+
+---
+
+# 📂 Project Structure
+
+```text
+AI-Log-Analyzer/
+│
+├── lambda_function.py
+├── requirements.txt
+├── README.md
+│
+├── sample_logs/
+│   ├── application.log
+│   ├── database_error.log
+│   ├── nginx_error.log
+│   ├── security_alert.log
+│   ├── server.log
+│   └── system_health.log
+│
+├── images/
+│   ├── architecture.png
+│   ├── s3-upload.png
+│   ├── lambda-function.png
+│   ├── lambda-code.png
+│   ├── iam-role.png
+│   ├── secrets-manager.png
+│   ├── cloudwatch-logs.png
+│   ├── sns-subscription.png
+│   └── email-notification.png
+│
+└── LICENSE
+```
+
+---
+
+# 📸 Screenshots
+
+## 📤 Upload Log File to Amazon S3
+
+The user uploads a log file to the Amazon S3 bucket. The upload automatically triggers the serverless workflow.
+
+![S3 Upload](images/s3-upload.png)
+
+---
+
+## ⚡ AWS Lambda Trigger
+
+Amazon S3 automatically invokes the Lambda function whenever a new log file is uploaded.
+
+![Lambda Trigger](images/lambda-function.png)
+
+---
+
+## 🐍 Lambda Function Code
+
+The Lambda function performs the following tasks:
+
+- Downloads the uploaded log
+- Retrieves the OpenAI API Key
+- Sends the log to OpenAI
+- Receives the AI analysis
+- Sends the report through Amazon SNS
+
+![Lambda Code](images/lambda-code.png)
+
+---
+
+## 🔐 AWS Secrets Manager
+
+The OpenAI API Key is securely stored inside AWS Secrets Manager instead of hardcoding sensitive information into the application.
+
+![Secrets Manager](images/secrets-manager.png)
+
+---
+
+## 👤 IAM Role & Permissions
+
+AWS IAM provides secure access between S3, Lambda, Secrets Manager, CloudWatch, and SNS using least-privilege permissions.
+
+![IAM](images/iam-role.png)
+
+---
+
+## 📊 CloudWatch Monitoring
+
+CloudWatch captures execution logs for every Lambda invocation, enabling monitoring, debugging, and auditing.
+
+![CloudWatch](images/cloudwatch-logs.png)
+
+---
+
+## 📧 Amazon SNS Email Subscription
+
+Amazon SNS delivers AI-generated reports directly to the registered email address.
+
+![SNS](images/sns-subscription.png)
+
+---
+
+## 📩 AI Log Analysis Report
+
+Sample email received after successful AI analysis.
+
+The report contains:
+
+- Executive Summary
+- Error Detection
+- Security Observations
+- Recommendations
+- Severity Assessment
+
+![Email](images/email-notification.png)
+
+---
+
+# ⚙️ Installation & Setup
+
+## Clone Repository
+
+```bash
+git clone https://github.com/yourusername/AI-Log-Analyzer.git
+
+cd AI-Log-Analyzer
+```
+
+---
+
+## Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## Configure AWS
+
+Create:
+
+- Amazon S3 Bucket
+- AWS Lambda Function
+- SNS Topic
+- CloudWatch Log Group
+- IAM Role
+- Secrets Manager Secret
+
+---
+
+## Store OpenAI API Key
+
+Navigate to:
+
+AWS Console
+
+↓
+
+Secrets Manager
+
+↓
+
+Create Secret
+
+↓
+
+Store:
+
+```text
+OPENAI_API_KEY
+```
+
+---
+
+## Deploy Lambda
+
+Upload:
+
+```
+lambda_function.py
+```
+
+along with required dependencies.
+
+---
+
+## Configure S3 Trigger
+
+Inside Lambda:
+
+Add Trigger
+
+↓
+
+Amazon S3
+
+↓
+
+ObjectCreated Event
+
+↓
+
+Save
+
+---
+
+## Configure SNS
+
+Create Topic
+
+↓
+
+Create Email Subscription
+
+↓
+
+Confirm Email
+
+---
+
+## Upload Sample Logs
+
+Upload:
+
+- server.log
+- application.log
+- nginx_error.log
+- database_error.log
+- security_alert.log
+- system_health.log
+
+The complete workflow executes automatically.
+
+---
