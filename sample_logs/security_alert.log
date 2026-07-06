@@ -1,0 +1,10 @@
+2026-07-06 10:00:01 INFO User login successful
+2026-07-06 10:01:10 WARNING Five failed login attempts
+2026-07-06 10:01:35 WARNING IP temporarily blocked
+2026-07-06 10:02:00 ERROR Unauthorized API access
+2026-07-06 10:02:30 ERROR Privilege escalation attempt detected
+2026-07-06 10:03:15 CRITICAL Possible brute-force attack
+2026-07-06 10:03:55 INFO Security team notified
+2026-07-06 10:04:25 INFO Firewall rule updated
+2026-07-06 10:04:55 INFO User account locked
+2026-07-06 10:05:30 INFO Incident closed

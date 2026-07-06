@@ -1,0 +1,10 @@
+2026-07-06 09:00:01 INFO Nginx started
+2026-07-06 09:00:20 INFO Listening on port 443
+2026-07-06 09:01:11 WARNING High request rate detected
+2026-07-06 09:02:01 ERROR Upstream server unavailable
+2026-07-06 09:02:15 ERROR 502 Bad Gateway
+2026-07-06 09:03:10 WARNING Client request timeout
+2026-07-06 09:03:45 ERROR SSL handshake failed
+2026-07-06 09:04:15 CRITICAL Reverse proxy overloaded
+2026-07-06 09:04:55 INFO Restarting worker process
+2026-07-06 09:05:10 INFO Service restored

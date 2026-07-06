@@ -1,0 +1,10 @@
+2026-07-06 12:00:01 INFO Health monitoring started
+2026-07-06 12:01:15 INFO CPU Usage 42%
+2026-07-06 12:02:00 WARNING Memory usage 84%
+2026-07-06 12:02:40 WARNING Disk usage 91%
+2026-07-06 12:03:05 ERROR Process crashed unexpectedly
+2026-07-06 12:03:50 INFO Restarting process
+2026-07-06 12:04:15 ERROR Health check failed
+2026-07-06 12:05:00 CRITICAL CPU reached 99%
+2026-07-06 12:05:35 INFO Auto scaling triggered
+2026-07-06 12:06:20 INFO System stabilized
