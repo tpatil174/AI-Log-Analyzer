@@ -153,4 +153,197 @@ Sample email received after successful AI analysis.
 
 ![Email Report](images/email-analysis-report.png)
 
+------
+
+## ⚡ Lambda Trigger from Amazon S3
+
+Whenever a new log file is uploaded into the S3 bucket, an ObjectCreated event automatically invokes the Lambda function.
+
+![Lambda Trigger](images/lambda-s3-trigger.png)
+
 ---
+
+## 📂 AI Report Stored in Amazon S3
+
+After OpenAI analyzes the uploaded log, the generated report is automatically saved back into Amazon S3.
+
+![S3 Upload](images/s3-upload-success.png)
+
+---
+
+# 📄 Sample Log Files
+
+The repository includes several sample log files for testing.
+
+```
+sample_logs/
+├── application.log
+├── database_error.log
+├── nginx_error.log
+├── security_alert.log
+├── server.log
+└── system_health.log
+```
+
+These logs simulate real-world scenarios including:
+
+- Application exceptions
+- Database connection failures
+- Security alerts
+- Nginx server errors
+- System health monitoring
+- General server logs
+
+Simply upload any of these files to the configured S3 bucket to test the complete AI workflow.
+
+---
+
+# 📁 Project Structure
+
+```
+AI-Log-Analyzer/
+│
+├── images/
+│   ├── Architecture-Overview.png
+│   ├── aws-secrets-manager.png
+│   ├── cloudwatch-execution-logs.png
+│   ├── email-analysis-report.png
+│   ├── iam-role-permissions.png
+│   ├── lambda-code.png
+│   ├── lambda-s3-trigger.png
+│   ├── s3-upload-success.png
+│   └── sns-email-subscription.png
+│
+├── sample_logs/
+│   ├── application.log
+│   ├── database_error.log
+│   ├── nginx_error.log
+│   ├── security_alert.log
+│   ├── server.log
+│   └── system_health.log
+│
+├── lambda_function.py
+└── README.md
+```
+
+---
+
+# ▶️ How to Run
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/tpatil174/AI-Log-Analyzer.git
+```
+
+### 2. Create AWS resources
+
+- Amazon S3 Bucket
+- AWS Lambda Function
+- IAM Role
+- Amazon SNS Topic
+- CloudWatch
+- AWS Secrets Manager
+
+### 3. Store your OpenAI API Key
+
+Create a secret in AWS Secrets Manager:
+
+```
+OPENAI_API_KEY
+```
+
+---
+
+### 4. Deploy Lambda
+
+Upload:
+
+```
+lambda_function.py
+```
+
+Install the required dependencies and deploy them with your Lambda package.
+
+---
+
+### 5. Configure the S3 Trigger
+
+Configure an **ObjectCreated** event notification to invoke the Lambda function whenever a new log file is uploaded.
+
+---
+
+### 6. Test
+
+Upload one of the files from:
+
+```
+sample_logs/
+```
+
+The system will automatically:
+
+- Trigger Lambda
+- Analyze the log with OpenAI
+- Generate an AI report
+- Save the report to S3
+- Send an email via Amazon SNS
+
+---
+
+# 💡 Skills Demonstrated
+
+- AWS Lambda
+- Amazon S3
+- Amazon SNS
+- CloudWatch Monitoring
+- AWS IAM
+- AWS Secrets Manager
+- Python (boto3)
+- OpenAI API Integration
+- Event-Driven Architecture
+- Serverless Computing
+- Cloud Security Best Practices
+- Infrastructure Automation
+
+---
+
+# 🚀 Future Improvements
+
+- Dashboard using Amazon QuickSight
+- Support for multiple AI models
+- Multi-file batch processing
+- Severity scoring
+- Slack & Microsoft Teams notifications
+- CloudFormation / Terraform deployment
+- Web dashboard using React
+- Amazon EventBridge scheduling
+- Historical analytics and trends
+
+---
+
+# 👨‍💻 Author
+
+**Tushar Patil**
+
+AWS | Python | SQL | Cloud Automation | AI Integration | DevOps Enthusiast
+
+GitHub:
+
+https://github.com/tpatil174
+
+---
+
+# ⭐ If you found this project useful
+
+Please consider giving this repository a ⭐ on GitHub.
+
+It helps others discover the project and supports future improvements.
+
+---
+
+# 📄 License
+
+This project is intended for educational purposes and portfolio demonstration.
+
+Feel free to fork, learn from, and build upon it.
